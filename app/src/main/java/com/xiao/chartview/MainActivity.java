@@ -2,6 +2,8 @@ package com.xiao.chartview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,5 +37,16 @@ public class MainActivity extends AppCompatActivity {
         mChartView2.setxLabel(xLabel2);
         mChartView2.setData(data2);
         mChartView2.fresh();
+    }
+
+    public void load(View view) {
+        Toast.makeText(this, "正在加载数据...", Toast.LENGTH_SHORT).show();
+        view.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MainActivity.this, "数据加载成功", Toast.LENGTH_SHORT).show();
+                setData();
+            }
+        }, 2000);
     }
 }

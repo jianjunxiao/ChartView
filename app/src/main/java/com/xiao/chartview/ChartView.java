@@ -405,6 +405,7 @@ public class ChartView extends View {
      */
     public void fresh() {
         init();
+        requestLayout();
         postInvalidate();
     }
 }
